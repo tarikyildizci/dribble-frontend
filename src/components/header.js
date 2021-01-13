@@ -1,42 +1,38 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import "../css/header.scss"
+import down_arrow from "../images/down_arrow.svg"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Header = () => (
+  <div className="navbar">
+    <div className="logo">
+      <h1>TRANZZO</h1>
     </div>
-  </header>
+    <div className="links">
+      <li>
+        <Link>Products</Link>
+        <img src={down_arrow} alt="" />
+      </li>
+      <li>
+        <Link>Get Started</Link>
+        <img src={down_arrow} alt="" />
+      </li>
+      <li>
+        <Link>Pricing Plans</Link>
+      </li>
+      <li>
+        <Link>About Us</Link>
+        <img src={down_arrow} alt="" />
+      </li>
+      <li>
+        <Link>Help</Link>
+        <img src={down_arrow} alt="" />
+      </li>
+      <li className="sign-in">
+        <Link>Sign in</Link>
+      </li>
+    </div>
+  </div>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
